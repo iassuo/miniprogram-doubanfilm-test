@@ -1,0 +1,38 @@
+
+
+<view>
+  <view class="detail-container" style="background: url({{detail.pic.large}}) no-repeat top/cover"></view>
+  <view class="detail-mask"></view>
+  <view class="detail-info">
+    <image src="{{detail.pic.large}}" class="detail-img" mode="aspectFill"></image>
+    <view class="detail">
+      <view class="title">{{detail.title}}</view>
+      <view>评分：<text class="text">{{detail.rating.value}}</text>分</view>
+      <view>{{detail.card_subtitle}}</view>
+      <view>导演：{{detail.directors[0].name}}</view>
+    </view>
+  </view>
+  <view class="comment"><text>{{detail.intro}}</text></view>
+</view>
+<van-field
+    value="{{ content }}"
+    placeholder="写一些评价吧~"
+    border="{{ true }}"
+    bind:change="onChange"
+  />
+
+  <van-rate
+  value="{{ score }}"
+  size="{{ 25 }}"
+  color="#ee0a24"
+  void-color="eee"
+  void-icon="star"
+  bind:change="onScoreChange"
+/>
+<van-button type="primary" bindtap="chooseImages">上传图片</van-button>
+<view>
+  <image src="{{item}}" wx:for="{{images}}" wx:key="index" class="imgs"></image>
+</view>
+<van-button type="info" size="large" bindtap="submit">提交</van-button>
+
+

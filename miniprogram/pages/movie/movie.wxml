@@ -1,0 +1,11 @@
+<view class="movie" wx:for="{{movieList}}" wx:key="index">
+  <image class="movie-img" src="{{item.cover.url}}" mode="aspectFill"></image>
+  <view class="movie-info">
+    <view class="title">电影名称：{{item.title}}</view>
+    <view>主演：<text wx:for="{{item.actors}}" wx:key="index">{{item}} </text></view>
+    <!-- <view wx:for="{{item.comments}}" wx:key="index">影评：{{item.comment}}</view> -->
+    <view>导演：{{item.directors[0]}}</view>
+    <view>评分：<text class="code">{{item.rating.value}}</text>分</view>
+    <button type="primary" size="mini" class="btn" bindtap="todetail" data-movieid="{{item.id}}">评价</button>
+  </view>
+</view>

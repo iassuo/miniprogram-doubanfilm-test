@@ -1,0 +1,5 @@
+<view class="box">
+  <open-data type="userAvatarUrl" class="img"></open-data>
+</view>
+<open-data style="text-align:center;margin-bottom:20rpx;" type="userNickName"></open-data>
+<button type="primary" open-type="getUserInfo" bindtap="getInfo">获取用户信息</button>
